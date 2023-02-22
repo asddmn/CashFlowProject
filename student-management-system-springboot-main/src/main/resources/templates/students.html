@@ -9,25 +9,71 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Student Management System</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     <div class="dropdown col-l-4">
+	  <button class="btn btn-info dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+	     Bakiye İşlemleri
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	    <li><a class="dropdown-item" href="#">Bakiye Girişi</a></li>
+	    <li><a class="dropdown-item" href="#">Bakiye Güncelleme</a></li>
+	    <li><a class="dropdown-item" href="#">Anlık Bakiyeler</a></li>
+	    <li><a class="dropdown-item" href="#">Bankalar Arası Bakiye Sorgusu</a></li>
+	  </ul>
+	</div>
+     <div class="dropdown col-l-4">
+	  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+	     Transfer & Ödeme
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	    <li><a class="dropdown-item" href="#">Yatırım Girişi</a></li>
+	    <li><a class="dropdown-item" href="#">Yatırım Sorgusu</a></li>
+	    <li><a class="dropdown-item" href="#">Bankalar Arası Para Transferi</a></li>
+	    <li><a class="dropdown-item" href="#">Bankalar Arası Para Transfer Sorgusu</a></li>
+	    <li><a class="dropdown-item" href="#">Ödeme Girişi</a></li>
+	    <li><a class="dropdown-item" href="#">Ödeme Sorgusu</a></li>
+	  </ul>
+	</div>
+<div class="dropdown col-l-3">
+	  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+	     Raporlama İşlemleri
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	    <li><a class="dropdown-item" href="#">Günlük Rapor</a></li>
+	    <li><a class="dropdown-item" href="#">Nakit Akış Raporu</a></li>
+	    <li><a class="dropdown-item" href="#">Nakit Varlıklar Raporu</a></li>
+	    <li><a class="dropdown-item" href="#">Nakit Hareketler Raporu</a></li>
+	    <li><a class="dropdown-item" href="#">Aktif Yatırımlar Raporu </a></li>
+	    <li><a class="dropdown-item" href="#">Rapor Sorgusu</a></li>
+	  </ul>
+	</div>
+	 <div class="dropdown col-l-3">
+	  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+	     Düzenleme İşlemleri
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	    <li><a class="dropdown-item" href="#">Rapor Yetkilisi Düzenleme</a></li>
+	    <li><a class="dropdown-item" href="#">Finans Hesap Girişi</a></li>
+	    <li><a class="dropdown-item" href="#">Finans Hesapları Düzenleme</a></li>
+	    <li><a class="dropdown-item" href="#">Stopaj Oranı Değiştirme</a></li>
+	  </ul>
+	</div>
+	 <div class="dropdown col-l-3">
+	  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+	     Kullanıcı İşlemleri
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+	    <li><a class="dropdown-item" href="#">Şifre Değiştirme</a></li>
+	    <li><a class="dropdown-item" href="#">Kullanıcı Çıkış</a></li>
+	  </ul>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Student Management</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Teacher Management</a>
-      </li>
     </ul>
+  
   </div>
 </nav>
 
@@ -38,11 +84,11 @@
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/students/new}" class = "btn btn-primary btn-sm mb-3"> Add Student</a>
+				<a th:href = "@{/students/new}" class = "btn btn-info btn-sm mb-3"> Add Student</a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
-			<thead class = "table-dark">
+			<thead class = "table-info">
 				<tr>
 					<th> Student First Name</th>
 					<th> Student Last Name</th>
@@ -58,7 +104,7 @@
 					<td th:text = "${student.email}"></td>
 					<td>
 						<a th:href = "@{/students/edit/{id}(id=${student.id})}"
-						 class = "btn btn-primary">Update</a>
+						 class = "btn btn-info">Update</a>
 						
 						<a th:href = "@{/students/{id}(id=${student.id})}"
 						 class = "btn btn-danger">Delete</a>
